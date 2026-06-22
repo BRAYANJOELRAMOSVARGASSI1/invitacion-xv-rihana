@@ -11,8 +11,8 @@
    1. CONFIGURACIÓN
    ============================================= */
 const CONFIG = {
-  // Fecha del evento: 4 de julio de 2026, 19:30 (hora local)
-  eventDate: new Date(2026, 6, 4, 19, 30, 0),
+  // Fecha del evento: 17 de julio de 2026, 19:30 (hora local)
+  eventDate: new Date(2026, 6, 17, 19, 30, 0),
 
   // URL para el QR de fotos (cambia esto por tu link real)
   // Opciones sugeridas:
@@ -64,7 +64,7 @@ const CONFIG = {
   welcomeVoiceUrl: 'ElevenLabs_Mi_Doblaje.mp3',
 
   // Texto de la voz de bienvenida
-  welcomeVoiceText: 'Hola, invitado especial. En este día tan importante para nuestra familia, queremos hacerte parte de un momento único. Te invitamos a celebrar los quince años de Rihana Nicol, el cuatro de julio. ¡Bienvenido!',
+  welcomeVoiceText: 'Hola, invitado especial. En este día tan importante para nuestra familia, queremos hacerte parte de un momento único. Te invitamos a celebrar los quince años de Rihana Nicol, el diecisiete de julio. ¡Bienvenido!',
 };
 
 
