@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>XV Años — Rihana Nicol | 17 de Julio</title>
+  <meta name="description"
+    content="Estás cordialmente invitado(a) a celebrar los XV Años de Rihana Nicol Ramos Vargas.">
+  <meta property="og:title" content="🎀 Invitación XV Años — Rihana Nicol">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Usando Pacifico para la fuente gruesa estilo Coca-Cola -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Dancing+Script:700|Great+Vibes|Cormorant+Garamond:400,600|Inter:300,400,500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=28">
+</head>
+
+<body>
+  <div class="bg-anim" aria-hidden="true"></div>
+
+  <!-- Gradientes Globales (Cristalino, Dorado, Mariposa) -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <linearGradient id="crystal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F8BBD0" /> <!-- Rosa suave -->
+        <stop offset="50%" stop-color="#87CEEB" /> <!-- Celeste -->
+        <stop offset="100%" stop-color="#D1D1D6" /> <!-- Plateado cristalino -->
+      </linearGradient>
+      <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#D4AF37" />
+        <stop offset="50%" stop-color="#F0D78C" />
+        <stop offset="100%" stop-color="#D4AF37" />
+      </linearGradient>
+      <linearGradient id="butterfly-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3498DB" />
+        <stop offset="50%" stop-color="#87CEEB" />
+        <stop offset="100%" stop-color="#F8BBD0" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Partículas (Canvas Ligero) -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Mariposas Flotantes CSS -->
+  <div class="butterflies-container" aria-hidden="true">
+    <svg class="butterfly-anim b1" viewBox="0 0 64 64" fill="url(#butterfly-grad)">
+      <path
+        d="M60.6 15c-3.7-5-10.4-6-15.5-2.6-2.5 1.7-4.6 4.3-5.9 7.3-3.6 8-3.1 17.5 1.5 24.8 2.2 3.5 5.3 6.3 9.1 8 5.7 2.6 12.6 1.7 17.5-2.4 4-3.4 5.9-8.7 5.1-13.8-.5-3.3-2-6.5-4.4-8.9 3.5-2.2 6.1-5.7 7-9.8.7-3-.1-6.1-2-8.6zm-52.6 0c-1.9 2.5-2.7 5.6-2 8.6.9 4.1 3.5 7.6 7 9.8-2.4 2.4-3.9 5.6-4.4 8.9-.8 5.1 1.1 10.4 5.1 13.8 4.9 4.1 11.8 5 17.5 2.4 3.8-1.7 6.9-4.5 9.1-8 4.6-7.3 5.1-16.8 1.5-24.8-1.3-3-3.4-5.6-5.9-7.3-5.1-3.4-11.8-2.4-15.5 2.6z" />
+    </svg>
+    <svg class="butterfly-anim b2" viewBox="0 0 64 64" fill="url(#crystal-grad)">
+      <path
+        d="M60.6 15c-3.7-5-10.4-6-15.5-2.6-2.5 1.7-4.6 4.3-5.9 7.3-3.6 8-3.1 17.5 1.5 24.8 2.2 3.5 5.3 6.3 9.1 8 5.7 2.6 12.6 1.7 17.5-2.4 4-3.4 5.9-8.7 5.1-13.8-.5-3.3-2-6.5-4.4-8.9 3.5-2.2 6.1-5.7 7-9.8.7-3-.1-6.1-2-8.6zm-52.6 0c-1.9 2.5-2.7 5.6-2 8.6.9 4.1 3.5 7.6 7 9.8-2.4 2.4-3.9 5.6-4.4 8.9-.8 5.1 1.1 10.4 5.1 13.8 4.9 4.1 11.8 5 17.5 2.4 3.8-1.7 6.9-4.5 9.1-8 4.6-7.3 5.1-16.8 1.5-24.8-1.3-3-3.4-5.6-5.9-7.3-5.1-3.4-11.8-2.4-15.5 2.6z" />
+    </svg>
+    <svg class="butterfly-anim b3" viewBox="0 0 64 64" fill="url(#butterfly-grad)">
+      <path
+        d="M60.6 15c-3.7-5-10.4-6-15.5-2.6-2.5 1.7-4.6 4.3-5.9 7.3-3.6 8-3.1 17.5 1.5 24.8 2.2 3.5 5.3 6.3 9.1 8 5.7 2.6 12.6 1.7 17.5-2.4 4-3.4 5.9-8.7 5.1-13.8-.5-3.3-2-6.5-4.4-8.9 3.5-2.2 6.1-5.7 7-9.8.7-3-.1-6.1-2-8.6zm-52.6 0c-1.9 2.5-2.7 5.6-2 8.6.9 4.1 3.5 7.6 7 9.8-2.4 2.4-3.9 5.6-4.4 8.9-.8 5.1 1.1 10.4 5.1 13.8 4.9 4.1 11.8 5 17.5 2.4 3.8-1.7 6.9-4.5 9.1-8 4.6-7.3 5.1-16.8 1.5-24.8-1.3-3-3.4-5.6-5.9-7.3-5.1-3.4-11.8-2.4-15.5 2.6z" />
+    </svg>
+  </div>
+
+  <!-- PANTALLA 1: LANDING -->
+  <section id="landing-screen" class="screen" role="region">
+    <div class="landing-content">
+      <div class="xv-mark" aria-hidden="true">XV</div>
+      <p class="landing-subtitle" style="font-family: var(--font-script);">Rihana Nicol</p>
+      <button class="start-btn" id="start-btn">Tocar para descubrir</button>
+    </div>
+  </section>
+
+  <!-- PANTALLA 2: SOBRE -->
+  <section id="envelope-screen" class="screen hidden" role="region">
+    <div class="envelope-container">
+      <div class="envelope" id="envelope" role="button" tabindex="0">
+        <div class="envelope-flap" aria-hidden="true"></div>
+        <div class="envelope-seal" aria-hidden="true">
+          <div class="envelope-seal" aria-hidden="true">
+            <svg class="envelope-crown" viewBox="0 0 24 24"><path d="M2 19h20v2H2v-2zm1-3l2-10 4 6 3-8 3 8 4-6 2 10H3z"/></svg>
+            <span class="envelope-seal-text">R N</span>
+          </div>
+        </div>
+        <div class="envelope-body"><span class="envelope-xv">XV</span></div>
+      </div>
+      <p class="envelope-instruction" id="envelope-instruction">Toque el sobre para abrir la invitación</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main-invitation" role="main">
+
+    <!-- === HEADER (Tiara + Vestido) === -->
+    <section class="section header-section">
+      <div class="card visible">
+        <div class="card-inner-frame"></div>
+
+        <!-- Tiara SVG -->
+        <svg class="tiara-icon" viewBox="0 0 24 24">
+          <path
+            d="M4.5 17L2 5l6 4 4-7 4 7 6-4-2.5 12H4.5z M6.5 15h11l1.5-7-4 3-3-5-3 5-4-3 1.5 7z M12 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M19 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M4 19h16v2H4v-2z" />
+        </svg>
+
+        <h1 class="header-script script-text">Mis XV Años</h1>
+        <div class="section-divider"></div>
+        <p class="header-name" style="font-family: var(--font-script); text-transform: none; letter-spacing: normal; font-size: 3.5rem;">Rihana Nicol</p>
+
+        <!-- Ilustración realista del vestido de la quinceañera -->
+        <img src="quinceanera.webp?v=3" class="dress-image" alt="Quinceañera">
+
+        <p class="header-phrase">
+          «Con la gracia de Dios y el amor de mi familia,
+          hoy dejo atrás la niñez para dar paso a una nueva
+          y hermosa etapa de mi vida.»
+        </p>
+      </div>
+    </section>
+
+    <!-- === PADRES === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <h2 class="section-title">Mi Familia</h2>
+        <div class="section-divider"></div>
+        <div class="parents-names">
+          <span style="font-size:0.8rem; color:var(--text-secondary); text-transform:uppercase; display:block; letter-spacing:0.1em; margin-bottom:0.2rem;">Padre</span>
+          Michel Ramos Lujan
+          <span class="parents-and" style="font-size:1.8rem; margin:0.8rem 0;">&amp;</span>
+          <span style="font-size:0.8rem; color:var(--text-secondary); text-transform:uppercase; display:block; letter-spacing:0.1em; margin-bottom:0.2rem;">Madre</span>
+          Dalcy Vargas Ramirez
+          <span class="parents-and" style="font-size:1.8rem; margin:0.8rem 0;">&amp;</span>
+          <span style="font-size:0.8rem; color:var(--text-secondary); text-transform:uppercase; display:block; letter-spacing:0.1em; margin-bottom:0.2rem;">Hermano</span>
+          Brayan Ramos Vargas
+        </div>
+      </div>
+    </section>
+
+    <!-- === FECHA Y COUNTDOWN === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </span>
+        <div class="date-day">04</div>
+        <div class="date-month-year">Julio 2026</div>
+        <div class="section-divider"></div>
+        <p class="section-text" style="font-size:1.4rem; color:var(--text-primary); font-weight:500;">
+          Sábado, 19:30 <span style="font-size: 0.7em;">PM</span>
+        </p>
+        <div class="countdown-grid" id="countdown">
+          <div class="countdown-item">
+            <div class="countdown-number" id="cd-days">--</div>
+            <div class="countdown-unit">Días</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="cd-hours">--</div>
+            <div class="countdown-unit">Hrs</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="cd-minutes">--</div>
+            <div class="countdown-unit">Min</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="cd-seconds">--</div>
+            <div class="countdown-unit">Seg</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === HORA Y UBICACIÓN === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </span>
+        <div class="script-text" style="font-size:2.6rem; margin-bottom:0.5rem; filter:none; letter-spacing: normal; text-align: center;">19:30 <span style="font-size: 0.6em;">PM</span></div>
+        <div class="section-text" style="font-size:1.2rem; color:var(--text-primary); margin-bottom:0.5rem; font-weight: 500;">4 de Julio de 2026</div>
+        <div class="section-title" style="font-size:1.6rem; margin-bottom:0.5rem;">Salón «Patagonia»</div>
+        <p class="section-text" style="margin-bottom: 2rem;">Av. San Aurelio</p>
+        <a href="https://maps.app.goo.gl/ufbxVyKppev6XMtc8" target="_blank" class="btn-maps">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Ver ubicación
+        </a>
+      </div>
+    </section>
+
+    <!-- === DRESS CODE (Siluetas Cristalinas Arcoiris) === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <path d="M20.2 7.8l-7.7 7.7-4-4-5.7 5.7" />
+            <path d="M15 7h6v6" />
+          </svg>
+        </span>
+        <div class="section-title">Código de Vestimenta</div>
+        <p class="section-text" style="margin-bottom:1.5rem; font-style:italic;">Formal — Semiformal</p>
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <img src="iconos.webp?v=3" class="dresscode-image" alt="Código de Vestimenta">
+        </div>
+        <div class="dresscode-grid">
+          <div class="dresscode-item">
+            <div style="font-family:var(--font-elegant); font-size:1.3rem; color:var(--text-primary); margin-bottom:0.3rem;">Damas</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">Vestido simple o cocktail</div>
+          </div>
+          <div class="dresscode-item">
+            <div style="font-family:var(--font-elegant); font-size:1.3rem; color:var(--text-primary); margin-bottom:0.3rem;">Caballeros</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">Traje o camisa formal</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === COLORES RESERVADOS === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="8" cy="8" r="1" />
+            <circle cx="16" cy="8" r="1" />
+            <circle cx="8" cy="16" r="1" />
+            <circle cx="16" cy="16" r="1" />
+          </svg>
+        </span>
+        <h2 class="section-title">Colores Reservados</h2>
+        <p class="section-text" style="margin-bottom:1rem;">
+          Por favor, evita usar los siguientes colores, ya que son exclusivos de la Quinceañera:
+        </p>
+        <div class="color-swatch-row">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #0B2447, #3498DB);"></div>
+          <div style="font-family:var(--font-elegant); font-size:1.1rem; color:var(--text-primary);">Todos los tonos de Azul</div>
+        </div>
+        <div class="color-swatch-row">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #C0C0C0);"></div>
+          <div style="font-family:var(--font-elegant); font-size:1.1rem; color:var(--text-primary);">Color Plateado</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- === QUIZ === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </span>
+        <div class="section-title">¿Conoces a Rihana?</div>
+        <div id="quiz-container"></div>
+      </div>
+    </section>
+
+    <!-- === QR FOTOS === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" />
+          </svg>
+        </span>
+        <div class="section-title">Comparte Recuerdos</div>
+        <div class="qr-container" id="qr-code" style="display: flex; justify-content: center; margin: 1.5rem 0; padding: 1rem; background: #fff; border: 2px solid #A8A8AD; border-radius: 12px; width: max-content; margin-left: auto; margin-right: auto;">
+          <!-- QR generado por JS -->
+        </div>
+        <p class="section-text" style="font-size:1rem; font-weight:500;">
+          Pasos para compartir:
+        </p>
+        <ul style="text-align:left; font-family:var(--font-body); font-size:0.95rem; color:var(--text-secondary); margin:0.5rem auto 1.5rem auto; padding-left: 1.5rem; display:inline-block; max-width: 100%;">
+          <li style="margin-bottom: 0.5rem;">1. Escanea o <strong>toca</strong> el código QR.</li>
+          <li style="margin-bottom: 0.5rem;">2. Se abrirá un formulario seguro.</li>
+          <li style="margin-bottom: 0.5rem;">3. Sube tus fotos y videos de la fiesta.</li>
+        </ul>
+        <p class="section-text" style="font-size:0.85rem; font-style:italic;">
+          (Tus fotos se enviarán directamente a nuestro álbum privado).
+        </p>
+      </div>
+    </section>
+
+    <!-- === PLAYLIST === -->
+    <section class="section">
+      <div class="card">
+        <div class="card-inner-frame"></div>
+        <span class="section-icon">
+          <svg class="crystal-icon" viewBox="0 0 24 24">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+          </svg>
+        </span>
+        <div class="section-title">Tu Canción Favorita</div>
+        <form class="playlist-form" id="playlist-form">
+          <input type="text" class="playlist-input" id="playlist-input" placeholder="Ej: Despacito — Luis Fonsi">
+          <button type="submit" class="btn-add">Agregar canción</button>
+        </form>
+        <div id="playlist-success" class="success-msg">¡Tu canción ha sido registrada con éxito!</div>
+        <div class="playlist-list" id="playlist-list"></div>
+      </div>
+    </section>
+
+    <!-- === FINAL === -->
+    <section class="section" style="text-align:center; padding-bottom: 5rem;">
+      <div class="final-script script-text">Te esperamos</div>
+      <div class="section-divider"></div>
+      <p class="section-text" style="font-style:italic; color:#333333; font-weight:600; font-size:1.4rem; text-shadow: 0 0 1px rgba(255,255,255,0.8);">
+        Tu presencia es el mejor regalo.
+        <br><br>
+        <span style="letter-spacing:0.3em; color:var(--celeste-dark);">♡ ♡ ♡</span>
+      </p>
+    </section>
+
+    <!-- === FOOTER / CRÉDITOS === -->
+    <footer style="text-align: center; padding: 2rem 1.5rem; margin-top: 2rem; color: #ffffff; font-family: var(--font-body); font-size: 0.85rem; background: rgba(0, 0, 0, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.2);">
+      <p style="margin-bottom: 0.5rem; font-weight: 500; font-size: 1rem;">Desarrollado por: <span style="font-family: var(--font-elegant); font-size: 1.2rem;">Ramos Brayan</span></p>
+      <p style="margin-bottom: 0.8rem; opacity: 0.9;">Para solicitar tu invitación digital y personalizada, o para más información contáctame al:</p>
+      <a href="https://wa.me/59162053945" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #25D366; color: white; padding: 0.6rem 1.2rem; border-radius: 25px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); transition: transform 0.2s ease;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.031 0C5.385 0 .003 5.382.003 12.028c0 2.124.553 4.195 1.605 6.015L.175 23.279l5.375-1.41c1.768.96 3.766 1.465 5.818 1.466h.005c6.645 0 12.029-5.382 12.03-12.029C23.403 4.66 18.016 0 12.031 0zm.005 21.401h-.003c-1.796 0-3.555-.483-5.097-1.396l-.365-.216-3.791.994.998-3.696-.237-.377a10.086 10.086 0 01-1.543-5.31c0-5.578 4.54-10.119 10.12-10.119 5.579 0 10.119 4.54 10.121 10.119 0 5.579-4.54 10.119-10.119 10.119zm5.542-7.57c-.304-.152-1.798-.887-2.077-.989-.279-.102-.482-.152-.684.152-.203.304-.785.989-.963 1.192-.177.203-.355.228-.659.076-.304-.152-1.284-.473-2.447-1.511-.904-.808-1.514-1.808-1.691-2.112-.177-.304-.019-.469.133-.62.137-.137.304-.355.456-.533.152-.178.203-.304.304-.507.102-.203.051-.38-.025-.533-.076-.152-.684-1.646-.937-2.253-.247-.591-.497-.511-.684-.52-.177-.008-.38-.008-.582-.008-.203 0-.532.076-.811.38-.279.304-1.065 1.04-1.065 2.535 0 1.494 1.09 2.937 1.242 3.14.152.203 2.14 3.266 5.184 4.577.724.312 1.289.498 1.729.638.727.231 1.389.198 1.91.12.583-.087 1.798-.734 2.052-1.444.253-.71.253-1.319.177-1.444-.076-.125-.279-.203-.583-.355z"/>
+        </svg>
+        62053945
+      </a>
+    </footer>
+
+  </main>
+  <script src="app.js?v=26"></script>
+</body>
+
+</html>
