@@ -12,7 +12,7 @@
   <!-- Usando Pacifico para la fuente gruesa estilo Coca-Cola -->
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Dancing+Script:700|Great+Vibes|Cormorant+Garamond:400,600|Inter:300,400,500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=50">
 </head>
 
 <body>
@@ -218,24 +218,27 @@
           <span class="dresscode-ornament">❧</span>
         </div>
 
-        <div class="dresscode-img-wrap">
-          <img src="iconos.webp?v=3" class="dresscode-image" alt="Código de Vestimenta">
-        </div>
-
-        <!-- Tarjetas Damas / Caballeros -->
+        <!-- Tarjetas Damas / Caballeros con marcos e imagen dividida -->
         <div class="dresscode-grid">
-          <div class="dresscode-item">
+          
+          <!-- Tarjeta Damas -->
+          <div class="dresscode-item framed-card">
+            <div class="dresscode-split-img damas-img"></div>
             <div class="dresscode-item-icon">♀</div>
             <div class="dresscode-label">Damas</div>
             <div class="dresscode-divider-mini"></div>
             <div class="dresscode-desc">Vestido elegante<br>o cocktail</div>
           </div>
-          <div class="dresscode-item">
+          
+          <!-- Tarjeta Caballeros -->
+          <div class="dresscode-item framed-card">
+            <div class="dresscode-split-img caballeros-img"></div>
             <div class="dresscode-item-icon">♂</div>
             <div class="dresscode-label">Caballeros</div>
             <div class="dresscode-divider-mini"></div>
             <div class="dresscode-desc">Traje o<br>camisa formal</div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -409,7 +412,7 @@
     </footer>
 
   </main>
-  <script src="app.js?v=29"></script>
+  <script src="app.js?v=50"></script>
 </body>
 
 </html>

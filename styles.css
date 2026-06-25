@@ -446,22 +446,32 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 0.25rem;
 }
 
-/* Imagen centrada */
-.dresscode-img-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.8rem;
+/* Imágenes divididas por CSS usando background-position */
+.dresscode-split-img {
+  width: 100px;
+  height: 200px;
+  margin: 0 auto 0.5rem;
+  background-image: url('iconos.webp?v=50');
+  background-size: 200% auto; /* 200% ancho para que quepa exactamente la mitad (1 ícono) en 100% */
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 4px 10px rgba(135,206,235,0.4));
+}
+.damas-img {
+  background-position: left center;
+}
+.caballeros-img {
+  background-position: right center;
 }
 
-/* Grid */
+/* Grid y tarjetas enmarcadas */
 .dresscode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.dresscode-item { 
+.framed-card { 
   text-align: center;
-  background: linear-gradient(160deg, rgba(26,46,94,0.06) 0%, rgba(139,105,20,0.08) 100%);
-  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(240,245,255,0.95) 100%);
+  border-radius: 16px;
   padding: 1.4rem 0.8rem 1.2rem;
-  border: 1.5px solid rgba(26,46,94,0.18);
-  box-shadow: 0 4px 14px rgba(26,46,94,0.08);
+  border: 2px solid rgba(26,46,94,0.18);
+  box-shadow: 0 6px 20px rgba(26,46,94,0.12);
 }
 .dresscode-item-icon {
   font-size: 2.2rem;
