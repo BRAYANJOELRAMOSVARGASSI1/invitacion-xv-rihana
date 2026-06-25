@@ -542,7 +542,10 @@ a { color: inherit; text-decoration: none; }
 
 /* === PLAYLIST MOTIVADOR === */
 .playlist-chip {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
   background: linear-gradient(135deg, #8B6914, #D4AF37, #8B6914);
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
@@ -554,7 +557,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   padding: 0.45rem 1.2rem;
   border-radius: 50px;
-  margin-bottom: 1.2rem;
+  margin: 0 auto 1.2rem auto;
   box-shadow: 0 3px 12px rgba(139,105,20,0.35);
 }
 .playlist-hook {
