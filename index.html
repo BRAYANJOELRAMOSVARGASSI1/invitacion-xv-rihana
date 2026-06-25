@@ -12,7 +12,7 @@
   <!-- Usando Pacifico para la fuente gruesa estilo Coca-Cola -->
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Dancing+Script:700|Great+Vibes|Cormorant+Garamond:400,600|Inter:300,400,500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=31">
 </head>
 
 <body>
@@ -198,7 +198,7 @@
       </div>
     </section>
 
-    <!-- === DRESS CODE (Siluetas Cristalinas Arcoiris) === -->
+    <!-- === DRESS CODE === -->
     <section class="section">
       <div class="card">
         <div class="card-inner-frame"></div>
@@ -208,19 +208,33 @@
             <path d="M15 7h6v6" />
           </svg>
         </span>
+
         <div class="section-title dresscode-title">Código de Vestimenta</div>
-        <p class="section-text dresscode-subtitle" style="margin-bottom:1.5rem; font-style:italic;">Formal</p>
-        <div style="text-align: center; margin-bottom: 1.5rem;">
+
+        <!-- "FORMAL" centrado con ornamentos -->
+        <div class="dresscode-formal-badge">
+          <span class="dresscode-ornament">❧</span>
+          <span class="dresscode-formal-text">Formal</span>
+          <span class="dresscode-ornament">❧</span>
+        </div>
+
+        <div class="dresscode-img-wrap">
           <img src="iconos.webp?v=3" class="dresscode-image" alt="Código de Vestimenta">
         </div>
+
+        <!-- Tarjetas Damas / Caballeros -->
         <div class="dresscode-grid">
           <div class="dresscode-item">
+            <div class="dresscode-item-icon">♀</div>
             <div class="dresscode-label">Damas</div>
-            <div class="dresscode-desc">Vestido elegante o cocktail</div>
+            <div class="dresscode-divider-mini"></div>
+            <div class="dresscode-desc">Vestido elegante<br>o cocktail</div>
           </div>
           <div class="dresscode-item">
+            <div class="dresscode-item-icon">♂</div>
             <div class="dresscode-label">Caballeros</div>
-            <div class="dresscode-desc">Traje o camisa formal</div>
+            <div class="dresscode-divider-mini"></div>
+            <div class="dresscode-desc">Traje o<br>camisa formal</div>
           </div>
         </div>
       </div>
@@ -345,7 +359,7 @@
     </footer>
 
   </main>
-  <script src="app.js?v=28"></script>
+  <script src="app.js?v=29"></script>
 </body>
 
 </html>
