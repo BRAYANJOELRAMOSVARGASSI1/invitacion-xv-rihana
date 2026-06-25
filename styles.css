@@ -536,5 +536,113 @@ a { color: inherit; text-decoration: none; }
 @keyframes shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
 @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
 @keyframes pulse-btn { 0%, 100% { box-shadow: 0 0 0 0 rgba(135,206,235,0); } 50% { box-shadow: 0 0 0 12px rgba(135,206,235,0.3); } }
+@keyframes shineMove { 0% { left: -60%; } 100% { left: 130%; } }
+
+/* === TARJETAS DE COLORES RESERVADOS === */
+.color-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 0 1.2rem;
+}
+.color-card {
+  border: 2px solid rgba(26,46,94,0.2);
+  border-radius: 16px;
+  padding: 1.2rem 0.8rem 1rem;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(240,245,255,0.95) 100%);
+  box-shadow: 0 6px 20px rgba(26,46,94,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.color-card:active { transform: scale(0.97); }
+
+/* Swatch grande con efecto shine */
+.color-card-swatch-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 0.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.color-card-swatch {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+}
+.color-card-shine {
+  position: absolute;
+  top: 0; left: -60%;
+  width: 45%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-15deg);
+  animation: shineMove 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.color-card-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.1rem;
+  font-weight: 600;
+}
+.color-card-name {
+  font-family: var(--font-elegant);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.7rem;
+}
+.color-card-palette {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.cp {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.color-reserved-note {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: #8B6914;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(139,105,20,0.08);
+  border: 1px solid rgba(139,105,20,0.2);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* === SECCIÓN FINAL === */
+.final-frase {
+  font-family: var(--font-elegant);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.5),
+    0 2px 8px rgba(0,0,0,0.8);
+  text-align: center;
+  margin: 1rem auto 1.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+.final-hearts {
+  font-size: 2rem;
+  color: #D4AF37;
+  text-shadow: 0 0 12px rgba(212,175,55,0.8), 0 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 0.3em;
+  animation: pulse-btn 2s ease-in-out infinite;
+}
 
 * { animation-play-state: running !important; }
+

@@ -12,7 +12,7 @@
   <!-- Usando Pacifico para la fuente gruesa estilo Coca-Cola -->
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Dancing+Script:700|Great+Vibes|Cormorant+Garamond:400,600|Inter:300,400,500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-  <link rel="stylesheet" href="styles.css?v=31">
+  <link rel="stylesheet" href="styles.css?v=32">
 </head>
 
 <body>
@@ -255,18 +255,50 @@
           </svg>
         </span>
         <h2 class="section-title">Colores Reservados</h2>
-        <p class="section-text" style="margin-bottom:1rem;">
-          Por favor, evita usar los siguientes colores, ya que son exclusivos de la Quinceañera:
+        <p class="section-text" style="margin-bottom:1.5rem;">
+          Por favor, evita usar los siguientes colores,<br>ya que son exclusivos de la Quinceañera:
         </p>
-        <div class="color-swatch-row">
-          <div class="color-swatch" style="background: linear-gradient(135deg, #0B2447, #3498DB);"></div>
-          <div style="font-family:var(--font-elegant); font-size:1.1rem; color:var(--text-primary);">Todos los tonos de Azul</div>
+
+        <!-- Grid de tarjetas de colores -->
+        <div class="color-cards-grid">
+
+          <!-- Azul -->
+          <div class="color-card">
+            <div class="color-card-swatch-wrap">
+              <div class="color-card-swatch" style="background: linear-gradient(145deg, #001233, #0B2447, #3498DB);"></div>
+              <div class="color-card-shine"></div>
+            </div>
+            <div class="color-card-label">Todos los tonos</div>
+            <div class="color-card-name" style="color:#1A2E5E;">Azul</div>
+            <div class="color-card-palette">
+              <span class="cp" style="background:#001233;"></span>
+              <span class="cp" style="background:#0B2447;"></span>
+              <span class="cp" style="background:#1A6EBC;"></span>
+              <span class="cp" style="background:#3498DB;"></span>
+              <span class="cp" style="background:#87CEEB;"></span>
+            </div>
+          </div>
+
+          <!-- Plateado -->
+          <div class="color-card">
+            <div class="color-card-swatch-wrap">
+              <div class="color-card-swatch" style="background: linear-gradient(145deg, #888, #C0C0C0, #FFFFFF, #C0C0C0);"></div>
+              <div class="color-card-shine"></div>
+            </div>
+            <div class="color-card-label">Color</div>
+            <div class="color-card-name" style="color:#555;">Plateado</div>
+            <div class="color-card-palette">
+              <span class="cp" style="background:#888;"></span>
+              <span class="cp" style="background:#A8A8A8;"></span>
+              <span class="cp" style="background:#C0C0C0;"></span>
+              <span class="cp" style="background:#D8D8D8;"></span>
+              <span class="cp" style="background:#F0F0F0; border:1px solid #ccc;"></span>
+            </div>
+          </div>
+
         </div>
-        <div class="color-swatch-row">
-          <div class="color-swatch" style="background: linear-gradient(135deg, #E0E0E0, #FFFFFF, #C0C0C0);"></div>
-          <div style="font-family:var(--font-elegant); font-size:1.1rem; color:var(--text-primary);">Color Plateado</div>
-        </div>
-      </div>
+
+        <p class="color-reserved-note">⚠️ Estos colores son exclusivos de Rihana esa noche</p>
       </div>
     </section>
 
@@ -336,13 +368,13 @@
     </section>
 
     <!-- === FINAL === -->
-    <section class="section" style="text-align:center; padding-bottom: 5rem;">
+    <section class="section final-section" style="text-align:center; padding-bottom: 5rem;">
       <div class="final-script script-text">Te esperamos</div>
       <div class="section-divider"></div>
-      <p class="section-text" style="font-style:italic; color:#333333; font-weight:600; font-size:1.4rem; text-shadow: 0 0 1px rgba(255,255,255,0.8);">
+      <p class="final-frase">
         Tu presencia es el mejor regalo.
-        <br><br>
-        <span style="letter-spacing:0.3em; color:var(--celeste-dark);">♡ ♡ ♡</span>
+      </p>
+      <div class="final-hearts">♥ &nbsp;♥ &nbsp;♥</div>
       </p>
     </section>
 
