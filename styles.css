@@ -530,6 +530,50 @@ a { color: inherit; text-decoration: none; }
 
 .final-script { font-size: 5rem; margin-bottom: 1rem; }
 
+/* === PLAYLIST MOTIVADOR === */
+.playlist-chip {
+  display: inline-block;
+  background: linear-gradient(135deg, #8B6914, #D4AF37, #8B6914);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 3px 12px rgba(139,105,20,0.35);
+}
+.playlist-hook {
+  font-family: var(--font-elegant);
+  font-size: 1.2rem;
+  color: #1A2E5E;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 1.4rem;
+  padding: 0 0.5rem;
+}
+.playlist-hook strong {
+  color: #8B6914;
+  font-weight: 700;
+}
+.playlist-note {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #1A2E5E;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 1.2rem;
+  padding: 0.8rem 1rem;
+  background: rgba(26,46,94,0.06);
+  border: 1.5px dashed rgba(26,46,94,0.25);
+  border-radius: 10px;
+}
+
 /* Animaciones */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
