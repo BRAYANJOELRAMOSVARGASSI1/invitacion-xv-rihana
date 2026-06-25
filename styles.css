@@ -397,6 +397,39 @@ a { color: inherit; text-decoration: none; }
   filter: contrast(1.1) drop-shadow(0 5px 15px rgba(135,206,235,0.3));
 }
 
+/* Dress Code — Alta visibilidad para personas mayores */
+.dresscode-title {
+  font-size: 2.4rem !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #1A365D !important; /* Azul oscuro sólido, máximo contraste */
+  font-weight: 600 !important;
+  letter-spacing: 0.08em;
+}
+.dresscode-subtitle {
+  font-size: 1.6rem !important;
+  color: #1A365D !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.dresscode-label {
+  font-family: var(--font-elegant);
+  font-size: 1.4rem;
+  color: #1A365D;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.dresscode-desc {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 .color-swatch-row { 
   display: flex; align-items: center; gap: 1rem; padding: 0.8rem; 
   background: rgba(255, 255, 255, 0.6); border-radius: 12px; margin-bottom: 0.8rem; 
