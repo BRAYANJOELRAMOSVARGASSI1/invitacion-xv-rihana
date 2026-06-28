@@ -487,6 +487,7 @@ class QuizManager {
     this.currentIndex = 0;
     this.score = 0;
     this.answered = false;
+    this.userAnswers = [];
   }
 
   init() {
@@ -537,6 +538,7 @@ class QuizManager {
 
     const selectedIndex = parseInt(e.target.dataset.index);
     const correctIndex = this.questions[this.currentIndex].correct;
+    this.userAnswers[this.currentIndex] = selectedIndex;
     const options = this.container.querySelectorAll('.quiz-option');
 
     // Deshabilitar todas las opciones
@@ -565,20 +567,58 @@ class QuizManager {
     const pct = Math.round((this.score / total) * 100);
     let message = '';
 
-    if (pct === 100) message = '¡Conoces a Rihana como la palma de tu mano! 🌟';
+    if (pct === 100) message = '¡Nivel Bestie desbloqueado! Eres su confidente oficial. 👑';
     else if (pct >= 80) message = '¡Impresionante! Realmente la conoces bien. 🎉';
     else if (pct >= 60) message = '¡Nada mal! Sabes bastante de ella. 😊';
     else if (pct >= 40) message = '¡No estuvo tan mal! Hay detalles por descubrir. 🤔';
-    else message = '¡Parece que necesitas conocerla más en la fiesta! 😄';
+    else message = '¡Uy! Vas a tener que sentarte con ella en la fiesta para que te ponga al día. 😅';
+
+    let factsHtml = '<div class="quiz-facts-list">';
+    this.questions.forEach((q, i) => {
+      const isCorrect = this.userAnswers[i] === q.correct;
+      const userText = q.options[this.userAnswers[i]];
+      const correctText = q.options[q.correct];
+      const icon = isCorrect ? '✅' : '❌';
+      let text = '';
+      if (isCorrect) {
+          text = `¡Acertaste! Efectivamente es <b>${correctText}</b>.`;
+      } else {
+          const userStr = userText ? `Creíste que era <i>${userText}</i>, pero` : 'En realidad';
+          text = `${userStr} prefiere <b>${correctText}</b>.`;
+      }
+      factsHtml += `<div class="quiz-fact-item ${isCorrect ? 'correct' : 'incorrect'}">
+                      <span class="quiz-fact-icon">${icon}</span>
+                      <span class="quiz-fact-text">${text}</span>
+                    </div>`;
+    });
+    factsHtml += '</div>';
 
     this.container.innerHTML = `
       <div class="quiz-result">
-        <div class="quiz-score">${this.score}/${total}</div>
+        <div class="quiz-score"><span id="quiz-final-score">0</span>/${total}</div>
         <div class="quiz-score-label">${message}</div>
+        ${factsHtml}
       </div>
     `;
 
     this.audio.playChime();
+    
+    // Animar puntaje
+    const scoreEl = document.getElementById('quiz-final-score');
+    if (this.score > 0) {
+      let currentScore = 0;
+      const interval = setInterval(() => {
+        currentScore++;
+        scoreEl.textContent = currentScore;
+        if (currentScore >= this.score) {
+          clearInterval(interval);
+          if (pct >= 80) {
+            const rect = scoreEl.getBoundingClientRect();
+            window.dispatchEvent(new CustomEvent('quiz-high-score', { detail: { x: rect.left + rect.width/2, y: rect.top + rect.height/2 } }));
+          }
+        }
+      }, 200);
+    }
 
     // Guardar en localStorage
     try {
@@ -845,6 +885,11 @@ class ScreenManager {
     if (quizContainer) {
       this.quiz = new QuizManager(quizContainer, CONFIG.quiz, this.audio);
       this.quiz.init();
+      
+      window.addEventListener('quiz-high-score', (e) => {
+        this.particles.createBurst(e.detail.x, e.detail.y, 40);
+        this.audio.playBurst();
+      });
     }
 
     // Playlist

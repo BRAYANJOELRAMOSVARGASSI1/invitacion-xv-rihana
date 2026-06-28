@@ -521,6 +521,59 @@ a { color: inherit; text-decoration: none; }
 .quiz-option.correct { background: #D4EDDA; border-color: #28A745; color: #155724; }
 .quiz-option.incorrect { background: #F8D7DA; border-color: #DC3545; color: #721C24; }
 
+.quiz-result { text-align: center; }
+.quiz-score { font-family: var(--font-elegant); font-size: 3.5rem; font-weight: 700; color: #1A2E5E; line-height: 1; }
+.quiz-score-label { font-family: var(--font-body); font-size: 1.1rem; color: #555; margin-bottom: 1rem; }
+
+/* === RESUMEN DEL QUIZ (FACTS) === */
+.quiz-facts-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.quiz-fact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(135,206,235,0.05);
+  transition: transform 0.2s ease;
+}
+
+.quiz-fact-item:hover {
+  transform: translateX(4px);
+}
+
+.quiz-fact-item.correct {
+  border-left: 4px solid #27AE60;
+}
+
+.quiz-fact-item.incorrect {
+  border-left: 4px solid #E74C3C;
+}
+
+.quiz-fact-icon {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.quiz-fact-text {
+  font-family: var(--font-body);
+  color: #333;
+  line-height: 1.4;
+}
+
+.quiz-fact-text b {
+  color: #1A2E5E;
+  font-weight: 600;
+}
 .qr-box { padding: 1.5rem; background: #FFF; border-radius: 20px; display: inline-block; box-shadow: 0 10px 30px rgba(135,206,235,0.2); border: 1px solid var(--celeste-mid); }
 
 .playlist-form { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1rem; width: 100%; }
